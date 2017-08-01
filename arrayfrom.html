@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>array.from</title>
+</head>
+<body>
+<div id="example"></div>
+<script src="../jspackage/browser.min.js"></script>
+<script src="../jspackage/react.min.js"></script>
+<script src="../jspackage/react-dom.min.js"></script>
+<script type="text/babel">
+    window.onload = function() {
+        let ps = document.querySelectorAll('p');
+        Array.from(ps).forEach(function (p) {
+            console.log(p);
+        });
+        function foo() {
+            var args = Array.from(arguments);
+        }
+    }
+</script>
+</body>
+</html>

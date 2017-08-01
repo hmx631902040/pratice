@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两列布局</title>
+    <style>
+    .fa {position:relative;}
+    .one {position: absolute;width: 100px;height: 100px;background-color: pink;}
+    .onn {margin-left: 100px;height: 100px;background-color: #bfa;}
+    .fa1 {}
+    .one1 {float:left;width: 100px;height: 100px;background-color: pink;}
+    .onn1 {overflow:auto;height: 100px;background-color: #bfa;}
+    .fa2 {}
+    .one2 {float:left;width: 100px;height: 100px;background-color: pink;}
+    .onn2 {float:left;width:calc(100% - 100px);height: 100px;background-color: #bfa;}
+    </style>
+</head>
+<body>
+    <div class="fa">
+        <div class="one">左边</div>
+        <div class="onn">右边</div>
+    </div>
+    <div class="fa1">
+        <div class="one1">左边</div>
+        <div class="onn1">右边</div>
+    </div>
+    <div class="fa2">
+        <div class="one2">左边</div>
+        <div class="onn2">右边</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+window.onload=function(){
+
+    var xmlhttp;
+
+    if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera,Safari
+
+        xmlhttp= new XMLHttpRequest();
+
+    }else{// code for IE6, IE5
+
+        xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+
+    }
+
+    xmlhttp.onreadystatechange= function(){
+        if (xmlhttp.readyState ==4 && xmlhttp.status == 200) {//获得了请求数据
+
+            var expertinfolist = xmlhttp.responseText;
+
+            //发送请求数据到myDiv     document.getElementById("myDiv").innerHTML=expertinfolist;
+            console.log(expertinfolist)
+        }
+
+    }
+
+    var url="http://192.168.230.188:21800/api/news20/fundf10?sid=1480469595579&func=jjfh&code=184700";
+
+    xmlhttp.open("GET", url, true);
+
+    xmlhttp.send();
+
+}
+</script>
+</body>
+</html>

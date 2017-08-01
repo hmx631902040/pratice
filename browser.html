@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>browser</title>
+</head>
+<body>
+    <div id="btn">click me</div>
+    <script>
+        // var leftPos = (typeof window.screenLeft == "number") ? window.screenLeft : window.screenX;
+        // var topPos = (typeof window.screenTop == "number") ? window.screenTop : window.screenY;
+        // alert(leftPos);
+        // alert(topPos);
+
+        //取页面视口大小
+        // var pageWidth = window.innerWidth,
+        //     pageHeight = window.innerHeight;
+        //     if(typeof pageWidth != "number"){
+        //         if(document.compatMode == "CSS1Compat") {
+        //             pageWidth = document.documentElement.clientWidth;
+        //             pageHeight = document.documentElement.clientHeight;
+        //         }else {
+        //             pageWidth = document.body.clientWidth;
+        //             pageHeight = document.body.clientHeight;
+        //         }
+        //     }
+        //     alert(pageWidth);
+        //     alert(pageHeight);
+
+        // var num = 0;
+        // var max = 10;
+        // var intervalId = null;
+        // function incrementNumber(){
+        //     num++;
+        //     if(num == max) {
+        //         clearInterval(intervalId);
+        //         alert("Done");
+        //     }
+        //     console.log(num);
+        // }
+        // intervalId = setInterval(incrementNumber,500);
+
+        // function hasIEPlugin(name){
+        //     try {
+        //         new ActiveXObjext(name);
+        //         return true;
+        //     } catch (ex){
+        //         return false;
+        //     }
+        // }
+        // alert(hasIEPlugin("ShockwaveFlash.ShockwaveFlash"));
+        // alert(hasIEPlugin("QuickTime.QuickTime"));
+
+        // function hasFlash(){
+        //     var result = hasPlugin("Flash");
+        //     if(!result){
+        //         result = hasIEPlugin("ShockwaveFlash.ShockwaveFlash");
+        //     }
+        //     return result;
+        // }
+        // function hasQuickTime(){
+        //     var result = hasPlugin("QuickTime");
+        //     if(!result){
+        //         result = hasIEPlugin("QuickTime.QuickTime");
+        //     }
+        //     return result;
+        // }
+        // alert(hasFlash());
+        // alert(hasQuickTime());
+
+        // var EventUtil = {
+        //     addHandler: function(element, type, handler){
+        //         if(element.addEventListener) {
+        //             element.addEventListener(type, handler, false);
+        //         }else if(element.attachEvent){
+        //             element.attachEvent("on" + type, handler);
+        //         }else {
+        //             element["on" + type] = handler;
+        //         }
+        //     },
+        //     removeHandler: function(element, type, handler){
+        //         if(element.removeEventListener) {
+        //             element.removeEventListener(type, handler, false);
+        //         }else if(element.detachEvent){
+        //             element.detachEvent("on" + type, handler);
+        //         }else{
+        //             element["on" + type] = null;
+        //         }
+        //     }
+        // };
+
+        var btn = document.getElementById("btn");
+        // btn.onclick = function(event){
+        //     alert(event.currentTarget === this); //true
+        //     alert(event.target === this); //true
+        // };
+
+        // var handler = function(event){
+        //     switch(event.type){
+        //         case "click":
+        //         alert("clicked");
+        //         break;
+        //         case "mouseover":
+        //         event.target.style.backgroundColor = "red";
+        //         break;
+        //         case "mouseout":
+        //         event.target.style.backgroundColor = "";
+        //         break;
+        //     }
+        // };
+        // btn.onclick = handler;
+        // btn.onmouseover = handler;
+        // btn.onmouseout = handler;
+
+        var EventUtil = {
+            addEvent: function(element, type, handler){
+                //省略的代码
+            },
+            getEvent: function(event){
+                return event ? event : window.event;
+            },
+            getTarget: function(event){
+                return event.target || event.srcElement;
+            },
+            preventDefault: function(){
+                if(event.preventDefault){
+                    event.preventDefault();
+                }else{
+                    event.returnValue = false;
+                }
+            },
+            removeHandler: function(element, type, handler){
+                //省略的代码
+            },
+            stopPropagation: function(event){
+                if(event.stopPropagation){
+                    event.stopPropagation();
+                }else{
+                    event.cancelBubble = true;
+                }
+            }
+        };
+        btn.onclick = function(event){
+            event = EventUtil.getEvent(event);
+        };
+    </script>
+</body>
+</html>

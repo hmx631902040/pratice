@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="../jspackage/browser.min.js"></script>
+<script src="../jspackage/react.min.js"></script>
+<script src="../jspackage/react-dom.min.js"></script>
+<script type="text/babel">
+    var Segment = React.createClass({
+        getInitialState:function(){
+            return {
+                checked:false
+            };
+        },
+        handleClick:function(){
+            this.setState({
+                checked:!this.state.checked
+            });
+        },
+        render:function(){
+            var rowStyle = {
+                color:this.state.checked ? 'orange' : 'black',
+                fontSize:this.state.checked ? '24' : '16'
+            };
+            return (
+                react.children.map(child){this.props.children, function (child) {
+                    return
+                    <div>
+                        <span className="left" onClick={this.handleClick} style={rowStyle}>自选</span>
+                        <span> | </span>
+                        <span className="right" onClick={this.handleClick} style={rowStyle}>市场</span>
+                    </div>;
+                    }
+                }
+            );
+        }
+    })
+    ReactDOM.render(
+        <Segment/>,
+        document.getElementById('app')
+        )
+</script>
+</body>
+</html>

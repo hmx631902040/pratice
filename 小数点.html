@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮点数的相加</title>
+</head>
+<body>
+    <div>结果是：<span class="result"></span></div>
+    <script>
+        var a = 0.1;
+        var b = 0.2;
+        var c = a + b;
+        alert(c);
+        function add(num1,num2)
+        {
+          let a1,a2,m;
+          a1 = (''+num1).split('.')[1].length;
+          a2 = (''+num2).split('.')[1].length;
+          m = Math.pow(10,Math.max(a1,a2));
+          return(num1*m + num2*m)/m;
+        }
+        alert(add(0.1,0.2));
+        console.log(add(0.31,0.5111));
+    </script>
+</body>
+</html>

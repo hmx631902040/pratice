@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="app"></div>
+    <script src="../jspackage/browser.min.js"></script>
+    <script src="../jspackage/react.min.js"></script>
+    <script src="../jspackage/react-dom.min.js"></script>
+    <script type="text/babel">
+        var FormApp = React.createClass({
+            getInitailState:function() {
+                return {
+                    inputValue: 'input value',
+                    selectValue:'A',
+                    radioValue: 'B',
+                    textareaValue:'some text here...'
+                }
+            },
+            handleClick: function(e) {
+                this.setState({
+                    clickCount: this.state.clickCount + 1,
+                });
+                console.log(e.nativeEvent);
+            },
+            render: function() {
+                return (
+                    <div>
+                        <h3>点击下面的按钮</h3>
+                        <button onClick={this.handleClick}>点击我</button>
+                        <p>你一共点击了:{this.state.clickCount}</p>
+                    </div>
+                    )
+            }
+        });
+        var clickComponent = ReactDOM.render(
+            <FormApp />,
+            document.getElementById('app')
+            );
+    </script>
+</body>
+</html>

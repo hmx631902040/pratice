@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="example"></div>
+    <script src="../jspackage/browser.min.js"></script>
+    <script src="../jspackage/react.min.js"></script>
+    <script src="../jspackage/react-dom.min.js"></script>
+    <script type="text/babel">
+    var HelloMessage = React.createClass({
+      render: function() {
+        var messagebox = [];
+        for(var ii=0;ii<10;ii++){
+            messagebox.push(
+                    <MessageBox key={'subMsg'+i}/>
+                )
+        }
+        return (
+            <div>
+                <h1>Hello World！</h1>
+                {messagebox}
+            </div>
+        );
+      }
+    });
+
+    var MessageBox = React.createClass({
+        alertMe:function() {
+            alert("我被点击了");
+        },
+        render:function (){
+            return (
+                <div>
+                    <h1 onClick={this.alertMe}>你好世界！</h1>
+                    <Footer />
+                </div>
+                )
+        }
+    });
+
+    var Footer = React.createClass({
+        render:function(){
+            return (
+                    <div>
+                    <h1>这里是尾部</h1>
+                    </div>
+                )
+        }
+    });
+
+    ReactDOM.render(
+      <HelloMessage />,
+      document.getElementById('example'),
+      function(){
+
+      }
+    );
+
+    </script>
+</body>
+</html>

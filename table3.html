@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+</head>
+<body>
+   <!--  <table width="100%" cellPadding="0" cellSpacing="0">
+        <tbody>
+            <tr>
+                <td><div>gsgs</div>1</td>
+                <td>2</td>
+                <td><span>fsags</span>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>s1</td>
+                                <td>s2</td>
+                                <td>s3</td>
+                            </tr>
+                            <tr>
+                                <td>s4</td>
+                                <td>s5</td>
+                                <td>s6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+        </tbody>
+    </table> -->
+        <table className="stock-info-table" width="100%" cellPadding="0" cellSpacing="0">
+            <tbody>
+                <tr>
+                    <td><div className="ggxqLeft-icon"></div></td>
+                    <td><div>{this.params.zqmc}</div><div className="stock-info-zqdm">{this.params.zqdm}</div></td>
+                    <td><div className="ggxqRight-icon"></div></td>
+                    <td className={DataStyleHandler.getStyle(this.state.stockDetail.nZdf)}></td>
+                    <td>
+                        <div className={"change " + DataStyleHandler.getStyle(this.state.stockDetail.nZdf)}>{this.formatDat}</div>
+                        <div className={"pct-change " + DataStyleHandler.getStyle(this.state.stockDetail.nZdf)}>{this.formatDat}</div>
+                    </td>
+                    <td>
+                        <table className="detail-info">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span className="label">开盘价</span><span className="value"></span>
+                                    </td>
+                                    <td>
+                                        <span className="label">最高价</span><span className="value"></span>
+                                    </td>
+                                    <td>
+                                        <span className="label">最低价</span><span className="value"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="label">市值</span><span className="value"></span>
+                                    </td>
+                                    <td>
+                                        <span className="label">换手率</span><span className="value"></span>
+                                    </td>
+                                    <td>
+                                        <span className="label">成交额</span><span className="value"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td><div className="search-icon" onClick={this.goback}></div></td>
+                    <td><div className="close-icon" onClick={this.goback}></div></td>
+                </tr>
+            </tbody>
+        </table>
+</body>
+</html>

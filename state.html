@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="example"></div>
+    <script src="../jspackage/browser.min.js"></script>
+    <script src="../jspackage/react.min.js"></script>
+    <script src="../jspackage/react-dom.min.js"></script>
+    <script type="text/babel">
+    var Submessage = React.createClass({
+        render:function(){
+            return (
+                <div>
+                    <h3>写代码很有意思</h3>
+                </div>
+            )
+        }
+    });
+    var MessageBox = React.createClass({
+        getInitialState:function(){
+            return {
+                isVisible:true,
+                titleMessage: '你好世界 (来自state哦)',
+            }
+        },
+        render:function() {
+            var styleObj={
+                display:this.state.isVisible ? 'block' : 'none',
+            }
+            return (
+                    <div>
+                        <h1 style={styleObj}>{this.state.titleMessage}</h1>
+                        <Submessage />
+                    </div>
+                )
+        }
+    });
+
+    ReactDOM.render(
+        <MessageBox/>,
+        document.getElementById("example"),
+        function(){
+            console.log("渲染完成了!");
+        }
+    );
+    </script>
+</body>
+</html>

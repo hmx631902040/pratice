@@ -1,0 +1,153 @@
+body{
+    background-color: @ThemeWhite-MainBgColor;
+    margin: 0px;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: "PingFangSC-Regular";
+}
+
+.lineNormal{
+    z-index: 100;
+    height:1px;
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top,#aaaaaa 50%,transparent 50%,transparent 100%);
+    /* Safari 4-5, Chrome 1-9 */
+    /* -webkit-gradient(,  [, ]?,  [, ]? [, ]*) */
+    background: -webkit-gradient(linear,left,from(#fff),to(#aaaaaa));
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(top,#aaaaaa 50%,transparent 50%,transparent 100%);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top,#aaaaaa 50%,transparent 50%,transparent 100%);
+    background-size: 100% 1px;
+    -webkit-background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.lineSpacial{
+     height:1px;
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top,#aaaaaa 50%,transparent 50%,transparent 100%);
+    /* Safari 4-5, Chrome 1-9 */
+    /* -webkit-gradient(,  [, ]?,  [, ]? [, ]*) */
+    background: -webkit-gradient(linear,left,from(#d3d6df),to(#aaaaaa));
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(top,#aaaaaa 50%,transparent 50%,transparent 100%);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top,#aaaaaa 50%,transparent 50%,transparent 100%);
+    background-size: 100% 1px;
+    -webkit-background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+
+.line{
+    height:1px;
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top,#ececec 50%,transparent 50%,transparent 100%);
+    /* Safari 4-5, Chrome 1-9 */
+    /* -webkit-gradient(,  [, ]?,  [, ]? [, ]*) */
+    background: -webkit-gradient(linear,left,from(#fff),to(#ececec));
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(top,#ececec 50%,transparent 50%,transparent 100%);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top,#ececec 50%,transparent 50%,transparent 100%);
+    background-size: 100% 1px;
+    -webkit-background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.verline{
+    width:1px;
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(left,#aaaaaa 50%,transparent 50%,transparent 100%);
+    /* Safari 4-5, Chrome 1-9 */
+    /* -webkit-gradient(,  [, ]?,  [, ]? [, ]*) */
+    background: -webkit-gradient(linear,left,from(#aaaaaa),to(white));
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(left,#aaaaaa 50%,transparent 50%,transparent 100%);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(left,#aaaaaa 50%,transparent 50%,transparent 100%);
+    background-size: 1px 100%;
+    -webkit-background-size: 1px 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.verlineR{
+    width:1px;
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(left,transparent 50%,#ececec 50%,#ececec 100%);
+    /* Safari 4-5, Chrome 1-9 */
+    /* -webkit-gradient(,  [, ]?,  [, ]? [, ]*) */
+    background: -webkit-gradient(linear,left,from(white),to(#ececec));
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(left,transparent 50%,#ececec 50%,#ececec 100%);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(left, white, #ececec);
+    background-size: 1px 100%;
+    -webkit-background-size: 1px 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.ac{text-align: center;}
+.al{text-align: left;}
+.ar{text-align: right;}
+
+.color-rise {
+    color: #f85959;
+}
+
+.color-fall {
+    color: #48cb79;
+}
+
+.color-even {
+    color: #888;
+}
+
+.cross-line{
+   zoom:2.001;
+}
+
+table{
+    border-spacing: 0;
+}
+
+.cardview{
+    margin: 0px @Padding @Padding @Padding;
+    border-radius: @CommonBorderRadius;
+    background-color: @ThemeWhite-MainColor;
+}
+
+/* flex布局根节点 */
+.flex-parent{
+    display: flex;
+    display: -webkit-flex;
+}
+
+/* flex布局子节点 */
+.flex-child{
+    flex: 1;
+    -webkit-flex: 1;
+}
+
+@CommonBorderRadius: 4px; /*统一的圆角设置*/
+@Padding: 10px;
+@ThemeWhite-MainBgColor: #f6f6f6;
+@ThemeWhite-MainColor: #ffffff;
+@ThemeWhite-TitleColor: #221f1f;
+@ThemeWhite-HomeQTBg: #ffeceb;
+@normal-font-color: #666666;
+@short-border-background: rgba(218,218,218,.5);
+@root-height: 44px;
+@color-rise: #f85959;
+@color-even: #888;
+@color-fall: #48cb79;

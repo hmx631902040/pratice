@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建控制器</title>
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" runoob-directive></div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.directive("runoobDirective", function(){
+            return {
+                template: "我在指令构造器中创建！"
+            };
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+<style>
+.text-danger {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+.active {
+  width: 100px;
+  height: 100px;
+  background: green;
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <div v-bind:class="[errorClass ,isActive ? activeClass : '']"></div>
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">反转字符串</button>
+  <button v-on:click="changeColor">改变颜色</button>
+  <button v-on:click="add">增加 1</button>
+  <p>这个按钮被点击了 {{ counter }} 次。</p>
+  <ol>
+    <todo v-bind:todo="item" v-for="item in sites"></todo>
+  </ol>
+  <p>页面载入时，input元素自动获取焦点：</p>
+  <input type="text" v-focus>
+</div>
+
+<script>
+Vue.component('todo', {
+  props: ['todo'],
+  template: '<li>{{todo.text}}</li>'
+})
+
+Vue.directive('focus', {
+  inserted: function (el) {
+    el.focus()
+  }
+})
+
+new Vue({
+  el: '#app',
+  data: {
+    isActive: false,
+    message: 'Runoob!',
+    activeClass: 'active',
+    errorClass: 'text-danger',
+    counter: 0,
+    sites: [
+      {text: 'jiangzhengyu'},
+      {text: 'humengxia'},
+      {text: 'jiangzi'}
+    ]
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('');
+    },
+    changeColor: function () {
+      if(this.isActive ==false) {
+        this.isActive = true;
+      }else {
+        this.isActive = false;
+      }
+    },
+    add: function () {
+      this.counter += 1;
+    }
+  }
+})
+</script>
+</body>
+</html>

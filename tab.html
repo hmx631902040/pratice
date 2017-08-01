@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./tab.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="../jspackage/browser.min.js"></script>
+<script src="../jspackage/react.min.js"></script>
+<script src="../jspackage/react-dom.min.js"></script>
+<script type="text/babel">
+    var Segment = React.createClass({
+
+        render:function() {
+            return (
+                <ShowLi />
+            );
+        }
+    });
+
+    var ShowLi =  React.createClass({
+       getInitialState: function() {
+            return {
+                index: -1
+            };
+       },
+
+        handleClick: function(i) {
+            this.setState({index: i});
+        },
+
+        render: function() {
+            var dataTab = ["自选", "市场", ];
+            var index = this.state.index;
+            console.log("当前选中: ",index);
+
+            return (
+                <div>
+                    {dataTab.map(function(item, i){
+                        var classNameSelected = "";
+
+                        if (index == i) {
+                            classNameSelected = "active";
+                        }
+                        return (
+                        <li className={classNameSelected} key={i} onClick={this.handleClick.bind(this, i)}>{item}</li>
+                        );
+                    }, this)}
+                </div>
+            );
+        }
+    });
+    ReactDOM.render(
+        <Segment/>,
+        document.getElementById('app')
+        );
+</script>
+</body>
+</html>

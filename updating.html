@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="example"></div>
+    <script src="../jspackage/browser.min.js"></script>
+    <script src="../jspackage/react.min.js"></script>
+    <script src="../jspackage/react-dom.min.js"></script>
+    <script type="text/babel">
+    var Submessage = React.createClass({
+        componentWillReceiveProps:function(nextProp) {
+            console.log('子组件将要获得prop');
+        },
+        shouldComponentUpdate:function(nextProp,nextState) {
+            if(nextProp.count > 5) return false;
+            return true;
+        },
+        render:function(){
+            return (
+                <div>
+                    <h3>当前计数是:{this.props.count}</h3>
+                </div>
+            )
+        }
+    });
+    var MessageBox = React.createClass({
+        getInitialState:function(){
+            return {
+                count:0,
+            }
+        },
+        getDefaultProps:function() {
+        },
+        // componentWillMount:function() {
+        // },
+        // componentDidMount:function() {
+        // },
+        // componentWillUnmount:function() {
+        // },
+
+        shouldComponentUpdate:function(nextProp,nextState) {
+            console.log('shouldComponentUpdate');
+            if(nextState.count > 10) return false;
+            return true;
+        },
+        componentWillUpdate:function(){
+            console.log('componentWillUpdate');
+        },
+        componentDidUpdate:function() {
+            console.log('componentDidUpdate');
+        },
+        killMySelf:function() {
+            React.unmountComponentAtNode( document.getElementById('example') );
+        },
+        doUpdate:function() {
+            this.setState({
+                count: this.state.count + 1,
+            });
+        },
+        render:function() {
+            console.log('渲染')
+            return (
+                    <div>
+                        <h1>计数:{this.state.count}</h1>
+                        <button onClick={this.killMySelf}>卸载掉这个组价</button>
+                        <button onClick={this.doUpdate}>手动更新一下组件(包括子组件)</button>
+                        <Submessage count={this.state.count}/>
+                    </div>
+                )
+        }
+    });
+
+    ReactDOM.render(
+        <MessageBox/>,
+        document.getElementById("example"),
+        function(){
+            console.log("渲染完成了!");
+        }
+    );
+    </script>
+</body>
+</html>

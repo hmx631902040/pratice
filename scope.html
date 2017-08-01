@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scope</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // var color = "blue";
+        // function changeColor() {
+        //     if(color === "blue") {
+        //         color = "red";
+        //     } else {
+        //         color = "blue";
+        //     }
+        // }
+        // changeColor();
+        // alert("color is now " + color);
+
+        // var color  = "blue";
+        // function changeColor() {
+        //     var anotherColor = 'red';
+        //     function swapColors() {
+        //         var tempColor = anotherColor;
+        //         anotherColor = color;
+        //         color = tempColor;
+        //     }
+        //     swapColors();
+        // }
+        // changeColor();
+        // alert(color);
+
+        // function createPerson(name) {
+        //     var localPerson = new Object();
+        //     localPerson.name = name;
+        //     return localPerson;
+        // }
+        // var globalPerson = createPerson("Nicholas");
+        // console.log(globalPerson);
+        // globalPerson = null;
+
+        // function displayInfo(args) {
+        //     var output = "";
+        //     if(typeof args.name == "string") {
+        //         output += "Name: " + args.name + "\n";
+        //     }
+        //     if(typeof args.age == "Number") {
+        //         output += "Number: " + args.age + "n";
+        //     }
+        //     console.log(output);
+        // }
+        // displayInfo ({
+        //     name: "Nicholas",
+        //     age: 29
+        // });
+        // displayInfo({
+        //     name: "Gerg"
+        // });
+
+        // function factorial(num) {
+        //     if(num < 1) {
+        //         return 1;
+        //     } else {
+        //         return num * arguments.callee( num - 1 )
+        //     }
+        // }
+        // console.log(factorial(4));
+
+        // var trueFactorial = factorial;
+        // factorial = function() {
+        //     return 0;
+        // };
+        // alert(trueFactorial(5));
+        // alert(factorial(5));
+
+        // var stringValue = "hello ";
+        // var result = stringValue.concat("world");
+        // alert(result);
+        // alert(stringValue);
+
+        // function createPerson(name, age, job){
+        //     var o = new Object();
+        //     o.name = name;
+        //     o.age = age;
+        //     o.job = job;
+        //     o.sayName = function(){
+        //         alert(this.name);
+        //     };
+        //     return o;
+        // }
+        // var person1 = createPerson("zhnagsan", 29, "doctor");
+        // var person2 = createPerson("lisi", 23, "software");
+        // console.log(person1);
+        // console.log(person2);
+
+        // function Person(name, age, job){
+        //     this.name = name;
+        //     this.age = age;
+        //     this.job = job;
+        //     this.sayName = sayName;
+        // }
+        // function sayName(){
+        //     alert(this.name);
+        // };
+        // var person1 = new Person("zhangsan", 29, "doctor");
+        // var person2 = new Person("lisi", 30, "software");
+        // console.log(person1);
+        // console.log(person2);
+
+        // function Person(){}
+        // Person.prototype.name = "zhangsan";
+        // Person.prototype.age = 29;
+        // Person.prototype.job = "doctor";
+        // Person.prototype.sayName = function(){
+        //     alert(this.name);
+        // }
+        // var person1 = new Person();
+        // person1.sayName();
+        // var person2 = new Person();
+        // person2.sayName();
+        // alert(person1.sayName() == person1.sayName());
+
+        // console.log(person1.hasOwnProperty("name"));
+        // console.log("name" in person1);
+        // person1.name = "Gerg";
+        // console.log(person1.hasOwnProperty("name"));
+        // console.log("name" in person1);
+        // console.log(person1.name);
+        // console.log(person2.hasOwnProperty("name"));
+        // console.log("name" in person2);
+        // delete person1.name;
+        // console.log(person1.name);
+        // console.log(person1.hasOwnProperty("name"));
+        // console.log("name" in person1);
+
+        // var keys = Object.keys(Person.prototype);
+        // console.log(keys);
+
+        function Person(){}
+        Person.prototype = {
+            name: "zhangsan",
+            age: 29,
+            job: "doctor",
+            sayName: function(){
+                alert(this.name);
+            }
+        };
+        Object.defineProperty(Person.prototype, "constructor", {
+            enumerable: false,
+            value: Person
+        });
+    </script>
+    <ul className="bottom-table right-ul">
+        <li className="">
+            <div className="label">今开</div>
+            <div className={"value " + DataStyleHandler.getStyle(parseFloat(this.props.detailData.nJrkp)-parseFloat(this.props.detailData.nZrsp))}>{this.formatData(this.props.detailData.nJrkp)}</div>
+        </li>
+        <li className="">
+            <div className="label">高</div>
+            <div className={"value " + DataStyleHandler.getStyle(this.props.detailData.nZgcj-this.props.detailData.nZrsp)}>{this.formatData(this.props.detailData.nZgcj)}</div>
+        </li>
+        <li className="">
+            <div className="label">量</div>
+            <div className="value">{this.formatData(this.props.detailData.nCjss, false, false, true) + "手"}</div>
+        </li>
+    </ul>
+    <ul className="bottom-table right-ul right-ul-second">
+        <li className="">
+            <div className="label">换手</div>
+            <div className="value">{this.formatData(this.props.detailData.nHsl, true)}</div>
+        </li>
+        <li className="">
+            <div className="label">低</div>
+            <div className={"value " + DataStyleHandler.getStyle(this.props.detailData.nZdcj-this.props.detailData.nZrsp)}>{this.formatData(this.props.detailData.nZdcj)}</div>
+        </li>
+        <li className="">
+            <div className="label">额</div>
+            <div className="value">{this.formatData(this.props.detailData.nCjje, false, false, true)}</div>
+        </li>
+    </ul>
+    <table>
+        <tr className="bottom-table right-ul">
+            <td>
+                <div className="label">今开</div>
+                <div className={"value " + DataStyleHandler.getStyle(parseFloat(this.props.detailData.nJrkp)-parseFloat(this.props.detailData.nZrsp))}>{this.formatData(this.props.detailData.nJrkp)}</div>
+            </td>
+            <td>
+                <div className="label">高</div>
+                <div className={"value " + DataStyleHandler.getStyle(this.props.detailData.nZgcj-this.props.detailData.nZrsp)}>{this.formatData(this.props.detailData.nZgcj)}</div>
+            </td>
+            <td>
+                <div className="label">量</div>
+                <div className="value">{this.formatData(this.props.detailData.nCjss, false, false, true) + "手"}</div>
+            </td>
+        </tr>
+        <tr className="bottom-table right-ul right-ul-second">
+            <td>
+                <div className="label">换手</div>
+                <div className="value">{this.formatData(this.props.detailData.nHsl, true)}</div>
+            </td>
+            <td>
+                <div className="label">低</div>
+                <div className={"value " + DataStyleHandler.getStyle(this.props.detailData.nZdcj-this.props.detailData.nZrsp)}>{this.formatData(this.props.detailData.nZdcj)}</div>
+            </td>
+            <td>
+                <div className="label">额</div>
+                <div className="value">{this.formatData(this.props.detailData.nCjje, false, false, true)}</div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $.ajax({
+
+            type:'post', //方法类型
+
+            url:" http://192.168.230.188:21800/api/news20/fundf10?sid=1480469595579&func=jjfh&code=184700",//请求地址
+
+            dataType:'json', //数据类型
+
+            success:callback//请求成功处理函数
+
+        });
+
+        //返回函数
+
+        function  callback(data){
+
+            console.log(data);//获得请求返回对象；
+
+        }
+    </script>
+</body>
+</html>

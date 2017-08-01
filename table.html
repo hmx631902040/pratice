@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <style>
+        div.left{
+            width:100px;
+            border:1px solid red;
+            float: left;
+        }
+
+        div.right{
+            border:1px solid red;
+            margin-left: 104px;
+            text-align: center;
+        }
+        table{
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        zhegli shi ge
+    </div>
+    <div class="right">
+        <table width="100%" cellspacing=0 cellpadding=0 border=1>
+            <tbody>
+                <tr>
+                    <td>dagfaf</td>
+                    <td>afafda</td>
+                    <td>afa</td>
+                </tr>
+                <tr>
+                    <td>afa</td>
+                    <td>afaafafafa</td>
+                    <td>afaafa</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <table>
+        <tbody>
+            <tr className="bottom-table right-ul">
+                <td>
+                    <div className="label">今开</div>
+                    <div className={"value " + DataStyleHandler.getStyle(parseFloat(this.props.detailData.nJrkp)-parseFloat(this.props.detailData.nZrsp))}>{this.formatData(this.props.detailData.nJrkp)}</div>
+                </td>
+                <td>
+                    <div className="label">高</div>
+                    <div className={"value " + DataStyleHandler.getStyle(this.props.detailData.nZgcj-this.props.detailData.nZrsp)}>{this.formatData(this.props.detailData.nZgcj)}</div>
+                </td>
+                <td>
+                    <div className="label">量</div>
+                    <div className="value">{this.formatData(this.props.detailData.nCjss, false, false, true) + "手"}</div>
+                </td>
+            </tr>
+            <tr className="bottom-table right-ul right-ul-second">
+                <td>
+                    <div className="label">换手</div>
+                    <div className="value">{this.formatData(this.props.detailData.nHsl, true)}</div>
+                </td>
+                <td>
+                    <div className="label">低</div>
+                    <div className={"value " + DataStyleHandler.getStyle(this.props.detailData.nZdcj-this.props.detailData.nZrsp)}>{this.formatData(this.props.detailData.nZdcj)}</div>
+                </td>
+                <td>
+                    <div className="label">额</div>
+                    <div className="value">{this.formatData(this.props.detailData.nCjje, false, false, true)}</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rise</title>
+</head>
+<body>
+<script>
+    // var tmp = new Date();
+    // function f() {
+    //     console.log(tmp);
+    //     if(false) {
+    //         var tmp = "hello world";
+    //     }
+    // }
+    // f();
+
+    // var s = 'hello';
+    // for (var i = 0; i < s.length; i++) {
+    //     console.log(s[i]);
+    // }
+    // console.log(i);
+
+    // var map = new Map();
+    // map.set('first','hello');
+    // map.set('second','world');
+    // for(let [key,value] of map){
+    //     console.log(key + " is " + value);
+    // }
+    // for(let [key] of map){
+    //     console.log(key);
+    // }
+    // for(let [,value] of map){
+    //     console.log(value);
+    // }
+
+    // for(let codePoint of 'foo'){
+    //     console.log(codePoint)
+    // }
+
+    // var text = String.fromCodePoint(0x20bb7);
+    // for(let i = 0;i < text.length; i++){
+    //     console.log(text[i]);
+    // }
+    // for(let i of text){
+    //     console.log(i);
+    // }
+
+    // let a = String.raw`Hi\n${2+3}!`;
+    // console.log(a);
+
+    // console.log(Number('0b111'));
+    // console.log(Number('0o10'));
+
+    // console.log(Math.trunc(4.1));
+    // console.log(Math.trunc(4.9));
+    // console.log(Math.trunc(-4.1));
+    // console.log(Math.trunc(-4.9));
+    // console.log(Math.trunc(-0.1234));
+    // console.log(Math.trunc('123.456'));
+    // console.log(Math.trunc(NaN));
+    // console.log(Math.trunc('foo'));
+    // console.log(Math.trunc());
+
+    // Math.sign(-5) // -1
+    // Math.sign(5) // +1
+    // Math.sign(0) // +0
+    // Math.sign(-0) // -0
+    // Math.sign(NaN) // NaN
+    // Math.sign('foo'); // NaN
+    // Math.sign();      // NaN
+
+    function timeout(ms){
+        return new Promise((resolve, reject) => {
+            setTimeout(resolve, ms, 'done');
+        });
+    }
+    timeout(100).then((value) => {
+        console.log(value);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keyBoard</title>
+    <style type="text/css">
+    .word-table{
+        width: 100%;
+        background-color: #d1d4db;
+        button{
+            width: 86%;
+            height: @word-button-height;
+            background-color: white;
+            color: #252525;
+            border-style: none;
+            margin: 3px 6%;
+            outline: none;
+            padding: 0;
+            font-size: @keyboard-fontsize;
+            border-radius: 10%;
+            box-shadow: 0px 1px 3px #333;
+        }
+
+        .special-delete{
+            background: @word-special-btn-bgcolor url(../../../img/delete.svg) no-repeat 40%;
+            background-size: 60% 60%;
+        }
+
+        ul{
+            padding: 0;
+            list-style: none;
+            width: 100%;
+            margin: 0;
+        }
+
+        li{
+            float: left;
+            width: 10%;
+        }
+
+        .whitespage{
+            width: 96%;
+            margin: 3px 2%;
+            border-radius: 8px;
+        }
+
+        .one-width{width: 10%;}
+        .half-width{
+            width: 5%;
+            height: @word-button-height;
+        }
+        .one-half-width{width: 15%;}
+        .two-half-width{width: 20%;}
+        .three-half-width{width: 45%;}
+        .five-width{ width: 50%;}
+
+        .special{
+            background-color: @word-special-btn-bgcolor;
+        }
+
+        .whitespage:active, .special:active{
+            background-color: #e8e8e8;
+        }
+    }
+    </style>
+</head>
+<body>
+    <table className="number-table" cellPadding="0" cellSpacing="0">
+        <tbody>
+            <tr>
+                <td colSpan="9"><div className="lineNormal"></div></td>
+            </tr>
+            <tr>
+                <td className="lineWidth"><button className="special">000</button></td>
+                <td className="verlineWidth"><div className="verline"></div></td>
+                <td className="lineWidth"><button className="white-btn">1</button></td>
+                <td className="verlineWidth"><div className="verline"></div></td>
+                <td className="lineWidth"><button className="white-btn">2</button></td>
+                <td className="verlineWidth"><div className="verline"></div></td>
+                <td className="lineWidth"><button className="white-btn">3</button></td>
+                <td className="verlineWidth"><div className="verlineR"></div></td>
+                <td rowSpan="3" className="lineWidth del"><button className="btnDelete" keyType="3"></button></td>
+            </tr>
+            <tr>
+                <td className="lineWidth"><div className="lineSpacial-graybutton"></div></td>
+                <td colSpan="7"><div className="lineNormal"></div></td>
+            </tr>
+            <tr>
+                <td className="lineWidth"><button className="special">200</button></td>
+                <td className="verlineWidth"><div className="verline"></div></td>
+                <td className="lineWidth"><button className="white-btn">4</button></td>
+                <td className="verlineWidth"><div className="verline"></div></td>
+                <td className="lineWidth"><button className="white-btn">5</button></td>
+                <td className="verlineWidth"><div className="verline"></div></td>
+                <td className="lineWidth"><button className="white-btn">6</button></td>
+                <td className="verlineWidth"><div className="verlineR"></div></td>
+            </tr>
+            <tr>
+                <td className="lineWidth"><div className="lineSpacial-graybutton"></div></td>
+                <td colSpan="7"><div className="lineNormal"></div></td>
+                <td className="lineWidth"><div className="lineSpacial-graybutton"></div></td>
+            </tr>
+            <tr>
+                <td className="lineWidth"><button className="special">300</button></td>
+                <td className="verlineWidth"><div className="verline"></div></td>
+                <td className="lineWidth"><button className="white-btn">7</button></td>
+                <td className="verlineWidth"><div className="verline"></div></td>
+                <td className="lineWidth"><button className="white-btn">8</button></td>
+                <td className="verlineWidth"><div className="verline"></div></td>
+                <td className="lineWidth"><button className="white-btn">9</button></td>
+                <td className="verlineWidth"><div className="verlineR"></div></td>
+                <td rowSpan="3" className="lineWidth cfm"><button className="btnConfirm" keyType="4">确认</button></td>
+            </tr>
+            <tr>
+                <td className="lineWidth"><div className="lineSpacial-graybutton"></div></td>
+                <td colSpan="7"><div className="lineNormal"></div></td>
+            </tr>
+            <tr>
+                <td className="lineWidth"><button className="special">600</button></td>
+                <td className="verlineWidth"><div className="verline"></div></td>
+                <td className="lineWidth"><button keyType="1" className="white-btn">ABC</button></td>
+                <td className="verlineWidth"><div className="verline"></div></td>
+                <td colSpan="3" className="lineWidth"><button className="white-btn">0</button></td>
+                <td className="verlineWidth"><div className="verlineR"></div></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

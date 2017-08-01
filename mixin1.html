@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="app"></div>
+    <script src="../jspackage/browser.min.js"></script>
+    <script src="../jspackage/react.min.js"></script>
+    <script src="../jspackage/react-dom.min.js"></script>
+    <script src="../jspackage/react-with-addons.min.js"></script>
+    <script type="text/babel">
+        var EasyForm = React.createClass({
+            mixins: [React.addons.LinkedStateMixin ],
+            getInitialState:function() {
+                return {
+                    message:'react is awesome',
+                    isReactAwesome:true,
+                }
+            },
+            render:function() {
+                return (
+                    <div>
+                        <h1>我想说:{this.state.message}</h1>
+                        <h2>React是不是很好用? {this.state.isReactAwesome?'非常好用':'一般般...'}</h2>
+                        <input type="text" valueLink={this.linkState('message')} />
+                        <br/>
+                        <input type="checkbox" checkedLink={this.linkState('isReactAwesome')}/>
+                        <SubComp messageLink={this.linkState('message')} likeLink={this.linkState('isReactAwesome')}/>
+                    </div>
+                )
+            }
+        });
+
+        var SubComp = React.createClass({
+            render:function() {
+                return (
+                    <div>
+                        <h3>这是一个子组件哦</h3>
+                        <SubsubComp {...this.props}/>
+                    </div>
+                    )
+            }
+        });
+
+        var SubsubComp = React.createClass({
+            render:function() {
+                return (
+                    <div>
+                        <p>你想说什么:</p>
+                        <input type="text" valueLink={this.props.messageLink} />
+                        <p>你喜欢React吗?</p>
+                        <input type="checkbox" checkedLink={this.props.likeLink}/>
+                    </div>
+                    )
+            }
+        });
+
+        ReactDOM.render(
+            <EasyForm />,
+            document.getElementById("app")
+            );
+    </script>
+</body>
+</html>

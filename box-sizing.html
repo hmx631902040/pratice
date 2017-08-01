@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box-sizing</title>
+    <style>
+    .first {
+        border: 2px solid red;
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+    }
+    .second {
+        border: 2px solid blue;
+        width: 100%;
+        height: 100px;
+        box-sizing: content-box;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="first">这是一个div</div>
+        <div class="second">这是二个div</div>
+    </div>
+</body>
+</html>
